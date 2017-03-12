@@ -19,12 +19,13 @@ public class PersonDAOImpl implements PersonDAO {
         this.sessionFactory = sessionFactory;
     }
     
-	public void save(Person p) {
+	public Person save(Person p) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		session.persist(p);
 		tx.commit();
 		session.close();
+		return p;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -35,4 +36,26 @@ public class PersonDAOImpl implements PersonDAO {
 		return personList;
 	}
 
+	@Override
+	public Person selectById(int id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		Person p = (Person) session.get(Person.class, id);
+		tx.commit();
+		session.close();
+		return p;
+	}
+
+	@Override
+	public Person update(Person p) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.saveOrUpdate(p);
+		tx.commit();
+		session.close();
+		return p;
+	}
+
+	
+	
 }

@@ -5,11 +5,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "INVOICE")
 public class Invoice {
+
+	@ManyToOne
+	@JoinColumn(name="person_id")
+	
+	private Person person;
+
+	
+	
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
 
 	@Id
 	@Column(name = "id")
@@ -19,7 +37,7 @@ public class Invoice {
 	@Column(name = "wartosc")
 	private int value;
 
-	private String customer;
+
 
 	public int getId() {
 		return id;
@@ -37,16 +55,9 @@ public class Invoice {
 		this.value = value;
 	}
 
-	public String getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(String customer) {
-		this.customer = customer;
-	}
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", value=" + value + ", customer=" + customer;
+		return "id=" + id + ", value=" + value;
 	}
 }

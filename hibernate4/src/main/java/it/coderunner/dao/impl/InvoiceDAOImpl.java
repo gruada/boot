@@ -35,5 +35,6 @@ public class InvoiceDAOImpl implements InvoiceDAO {
 		session.close();
 		return invoiceList;
 	}
+	
 
 }
