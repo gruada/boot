@@ -8,18 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PERSON")
-public class Person {
+@Table(name = "INVOICE")
+public class Invoice {
 
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name="imie")
-	private String name;
+	@Column(name = "wartosc")
+	private int value;
 
-	private String country;
+	private String customer;
 
 	public int getId() {
 		return id;
@@ -29,24 +29,24 @@ public class Person {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public int getValue() {
+		return value;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setValue(int value) {
+		this.value = value;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getCustomer() {
+		return customer;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setCustomer(String customer) {
+		this.customer = customer;
 	}
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", name=" + name + ", country=" + country;
+		return "id=" + id + ", value=" + value + ", customer=" + customer;
 	}
 }
