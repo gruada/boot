@@ -1,5 +1,6 @@
 package it.coderunner.spring.data.service;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -43,6 +44,10 @@ public class CarServiceImpl implements CarService{
 	@Override
 	public Page<Car> findAll(Pageable pageable) {
 		return carRepository.findAll(pageable);
+	}
+
+	public List<Car> findByRegDateBetween(Date dateStart, Date dateEnd) {
+		return carRepository.findByRegDateBetween(dateStart, dateEnd);
 	}
 
 }

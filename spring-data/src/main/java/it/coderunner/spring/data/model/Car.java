@@ -1,6 +1,7 @@
 package it.coderunner.spring.data.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,9 +33,13 @@ public class Car implements Serializable {
 	@Column(nullable = false)
 	private String color;
 	
-	public Car(String model, String color){
+	@Column(name="reg_date")
+	private Date regDate;
+	
+	public Car(String model, String color, Date regDate){
 		this.model = model;
 		this.color = color;
+		this.regDate = regDate;
 	}
 
 }

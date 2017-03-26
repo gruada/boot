@@ -1,5 +1,6 @@
 package it.coderunner.spring.data.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -18,6 +19,8 @@ public interface CarRepository extends CrudRepository<Car, Long>{
 	Car findByModelAndColorAllIgnoringCase(String model, String color);
 	
 	List<Car> findFirst10ByColor(String color);
+	
+	List<Car> findByRegDateBetween(Date dateStart, Date dateEnd);
 	
 	@SuppressWarnings("unchecked")
 	Car save(Car car);

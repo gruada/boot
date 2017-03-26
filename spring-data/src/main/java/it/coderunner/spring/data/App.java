@@ -80,7 +80,7 @@ public class App {
     @Bean
     public EmbeddedServletContainerCustomizer containerCustomizer() {
         return (container -> {
-            container.setPort(8091);
+            container.setPort(8092);
         });
     }
     
