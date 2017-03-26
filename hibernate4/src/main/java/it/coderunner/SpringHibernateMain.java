@@ -19,7 +19,7 @@ public class SpringHibernateMain {
 
 		int id =1 ;
 		Person person = personDAO.selectById(id);		
-		person.setName("Adam");
+		person.setName("Krzysiek");
 		person.setCountry("Poland");
 
 		person = personDAO.update(person);

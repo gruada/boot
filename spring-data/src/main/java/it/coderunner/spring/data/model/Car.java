@@ -13,28 +13,28 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class City implements Serializable {
+public class Car implements Serializable {
 
 
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 5034408425716562074L;
+	private static final long serialVersionUID = 5711651958724442355L;
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
 	@Column(nullable = false)
-	private String name;
+	private String model;
 
 	@Column(nullable = false)
-	private String country;
+	private String color;
 	
-	public City(String name, String country){
-		this.name = name;
-		this.country = country;
+	public Car(String model, String color){
+		this.model = model;
+		this.color = color;
 	}
 
 }
