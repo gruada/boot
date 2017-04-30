@@ -6,20 +6,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
-import it.coderunner.spring.data.model.City;
+import it.coderunner.spring.data.model.Variant;
 
-public interface CityRepository extends CrudRepository<City, Long>{
+public interface CityRepository extends CrudRepository<Variant, Long>{
 	
-	Page<City> findAll(Pageable pageable);
+	Page<Variant> findAll(Pageable pageable);
 
-	Page<City> findByNameContainingAndCountryContainingAllIgnoringCase(String name,
+	Page<Variant> findByNameContainingAndCountryContainingAllIgnoringCase(String name,
 			String country, Pageable pageable);
 
-	City findByNameAndCountryAllIgnoringCase(String name, String country);
+	Variant findByNameAndCountryAllIgnoringCase(String name, String country);
 	
-	List<City> findFirst10ByCountry(String country);
+	List<Variant> findFirst10ByCountry(String country);
 	
 	@SuppressWarnings("unchecked")
-	City save(City city);
+	Variant save(Variant city);
 
 }

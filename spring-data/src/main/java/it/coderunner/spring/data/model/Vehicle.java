@@ -1,11 +1,14 @@
 package it.coderunner.spring.data.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,28 +16,23 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class City implements Serializable {
+public class Vehicle implements Serializable {
 
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5034408425716562074L;
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private int id;
 
 	@Column(nullable = false)
 	private String name;
-
-	@Column(nullable = false)
-	private String country;
 	
-	public City(String name, String country){
-		this.name = name;
-		this.country = country;
-	}
+	@Column(nullable = false)
+	private String type;
+	
+	@OneToMany (mappedBy = "vehicle")
+	private Set<Trip> trips = new HashSet<>();
 
+	
 }

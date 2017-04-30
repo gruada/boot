@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import it.coderunner.spring.data.dao.CityRepository;
-import it.coderunner.spring.data.model.City;
+import it.coderunner.spring.data.model.Variant;
 
 @Service
 public class CityServiceImpl implements CityService{
@@ -20,22 +20,22 @@ public class CityServiceImpl implements CityService{
 	private CityRepository cityRepository;
 
 	@Override
-	public City findByNameAndCountryAllIgnoringCase(String name, String country) {
+	public Variant findByNameAndCountryAllIgnoringCase(String name, String country) {
 		return cityRepository.findByNameAndCountryAllIgnoringCase(name, country) ;
 	}
 
 	@Override
-	public City save(City city) {
+	public Variant save(Variant city) {
 		return cityRepository.save(city);
 	}
 
 	@Override
-	public List<City> findFirst10ByCountry(String country) {
+	public List<Variant> findFirst10ByCountry(String country) {
 		return cityRepository.findFirst10ByCountry(country);
 	}
 
 	@Override
-	public Page<City> findAll(Pageable pageable) {
+	public Page<Variant> findAll(Pageable pageable) {
 		return cityRepository.findAll(pageable);
 	}
 
