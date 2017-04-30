@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class App {
 	
 	private static final String PROPERTY_NAME_DATABASE_DRIVER = "org.h2.Driver";
-    private static final String PROPERTY_NAME_DATABASE_URL = "jdbc:h2:~/wwsis";
+    private static final String PROPERTY_NAME_DATABASE_URL = "jdbc:h2:~/wwsis3";
     private static final String PROPERTY_NAME_DATABASE_USERNAME = "test";
     private static final String PROPERTY_NAME_DATABASE_PASSWORD = "test";
     
