@@ -50,5 +50,8 @@ public class Departure implements Serializable {
 		this.time = time;
 		this.trip = trip;
 	}
+	public Departure (){
+		
+	}
 
 }

@@ -34,5 +34,11 @@ public class Vehicle implements Serializable {
 	@OneToMany (mappedBy = "vehicle")
 	private Set<Trip> trips = new HashSet<>();
 
-	
+	public Vehicle(String name, String type){
+		this.name = name;
+		this.type = type;
+	}
+	public Vehicle(){
+		
+	}
 }

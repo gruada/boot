@@ -62,5 +62,7 @@ public class Trip implements Serializable {
 		this.end = end;
 		this.vehicle = vehicle;
 	}
-
+public Trip(){
+	
+}
 }

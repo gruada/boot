@@ -38,5 +38,7 @@ public class Stop implements Serializable {
 		this.stopSymbol = stopSymbol;
 		this.stopName = stopName;
 	}
-	
+	public Stop(){
+		
+	}
 }
